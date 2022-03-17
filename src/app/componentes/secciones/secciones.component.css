@@ -1,0 +1,45 @@
+.tab{
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.pestañas{
+    border-bottom: 1px solid #E0E0E0;
+    background-color: #212121;
+}
+
+.pestañas ul{
+    padding: 10px;
+    display: inline-block;
+    margin: 0;
+}
+
+.pestañas ul li{
+    display: inline-block;
+    border-right: 2px solid #fff;
+    color: white;
+    font-size: 16px;
+    padding: 0 24px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+}
+
+.pestañas ul li:last-child{
+    border-right: none;
+}
+
+.content{
+    padding: 20px;
+}
+
+.acercade, .cvtitulo, .botones{
+    display: flex;
+    justify-content: space-between;
+}

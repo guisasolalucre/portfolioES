@@ -1,0 +1,32 @@
+.navbar{
+    position: fixed top;
+    justify-content: space-between;
+    max-height: 59px;
+}
+
+.botones {
+    display: flex;
+}
+
+.redessociales{
+    padding-right: 10px;
+    display: flex;
+}
+
+.redessociales a{
+    color: rgb(230, 230, 230);
+    border-radius: 50%;
+}
+
+i{
+    max-width: 13px;
+}
+
+img{
+    margin-left: .7em; 
+    max-height: 40px;
+}
+
+#login{
+    margin-right: .7em;
+}

@@ -1,0 +1,33 @@
+<div class="card info">
+
+  <div class="fotoportada">
+    <img [src]="persona.fotoportada" alt="banner">
+  </div>
+  
+  <div class="fotoperfil">
+    <img [src]="persona.fotoperfil" alt="foto de perfil">
+  </div>
+
+  <div id="contenedor">
+
+    <div class="datos">
+      <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
+      <p id="descripcion">{{persona.ocupacion}}</p>
+      <p id="ubicacion">{{persona.ubicacion}}</p>
+    </div>
+
+    <div id="editar-perfil">
+      <div class="boton">
+        <button type="button" class="btn btn-light btn-sm btn-block">Editar perfil</button>
+      </div>
+      <!-- <div class="boton">
+        <button type="button" class="btn btn-light btn-sm btn-block">Añadir sección</button>
+      </div>
+      <div class="boton">
+        <button type="button" class="btn btn-light btn-sm btn-block">Más</button>
+      </div> -->
+    </div>
+
+  </div>
+
+</div>

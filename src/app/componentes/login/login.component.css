@@ -1,0 +1,17 @@
+#paginalogin{
+    box-sizing: border-box;
+    width: 100vw;
+    display: block;
+    justify-content: space-between;
+}
+
+.card{
+    position: relative;
+    width: 400px;
+    padding: 5%;
+    margin: 2%;
+}
+
+.form-group{
+    margin-bottom: 4%;
+}

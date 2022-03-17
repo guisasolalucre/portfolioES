@@ -1,0 +1,30 @@
+body{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding-top: 60px;
+    margin: 0;
+}
+
+.card{
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #313131;
+    color: rgb(230, 230, 230);
+}
+
+p, h4{
+    margin: -1px;
+}
+
+#contenido{
+    box-sizing: border-box;
+    margin: 5px;
+}

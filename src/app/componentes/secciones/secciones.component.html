@@ -1,0 +1,86 @@
+<div class="tab">
+    <div class="pestañas">
+        <ul>
+
+            <li (click)="cambio('acercade')">Acerca de mí</li>
+
+            <li (click)="cambio('educacion')">Educación</li>
+
+            <li (click)="cambio('experiencia')">Experiencia</li>
+
+            <li (click)="cambio('habilidades')">Habilidades</li>
+
+            <li (click)="cambio('proyectos')">Proyectos</li>
+
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <div class="content-value" *ngIf="id === 'acercade'">
+            <div class="acercade">
+                <p>{{persona.acercade}}</p>
+                <i class="bi-pencil-fill"></i>
+            </div>
+        </div>
+
+        <div class="content-value" *ngIf="id === 'educacion'">
+            <ul>
+                <li *ngFor="let educacion of listaEducacion">
+                    <div class="cvtitulo">
+                        <h5>{{educacion.carrera}}</h5>
+                        <div class="botones">
+                            <i class="bi-pencil-fill"></i>
+                            <i class="bi-trash-fill"></i>
+                        </div>
+                    </div>
+                    <h6>{{educacion.institucion}}</h6>
+                    <p>{{educacion.ubicacion}}</p>
+                    <p id="duracion"><strong></strong></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-value" *ngIf="id === 'experiencia'">
+            <ul>
+                <li *ngFor="let experiencia of listaExperiencia">
+                    <div class="cvtitulo">
+                        <h5>{{experiencia.puesto}}</h5>
+                        <div class="botones">
+                            <i class="bi-pencil-fill"></i>
+                            <i class="bi-trash-fill"></i>
+                        </div>
+                    </div>
+                    <p>{{experiencia.empresa}}</p>
+                    <p id="duracion"><strong></strong></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-value" *ngIf="id === 'habilidades'">
+            <ul>
+                <li *ngFor="let skill of listaSkills">
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-value" *ngIf="id === 'proyectos'">
+            <ul>
+                <li *ngFor="let proyecto of listaProyectos">
+                    <div class="cvtitulo">
+                        <h5><a href="{{proyecto.link}}">{{proyecto.nombre}}</a></h5>
+                        <div class="botones">
+                            <i class="bi-pencil-fill"></i>
+                            <i class="bi-trash-fill"></i>
+                        </div>
+                    </div>
+                    <p>{{proyecto.tecnologias}}</p>
+                    <p id="duracion"><strong></strong></p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

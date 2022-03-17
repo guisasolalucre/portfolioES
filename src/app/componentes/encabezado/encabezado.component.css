@@ -1,0 +1,59 @@
+.fotoportada{
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    min-height: 250px;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.fotoperfil{
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    max-height: 150px;
+    min-height: 150px; 
+    border-radius: 50%;
+    box-shadow: 0px 0px 7px 5px rgb(255, 255, 255);
+
+}
+
+img{
+    width: 100%;
+}
+
+.fotoperfil img{
+    position: relative;
+    display: flex;
+    max-height: 150px;
+    border-radius: 50%;
+}
+
+#contenedor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.datos{
+    padding-top: 1%;
+    padding-left: 200px;
+    padding-bottom: 1%;
+    overflow: hidden;
+}
+
+#editar-perfil{
+    width: 15%;
+    margin-right: 5px;
+    margin-top: 7px;
+}
+
+.boton{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button{
+    display: flex;
+    margin: 3px;
+}
+
