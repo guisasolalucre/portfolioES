@@ -4,18 +4,19 @@
 
   <div class="card">
     <h2>Iniciar sesión</h2>
-    <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <form [formGroup] = "form" (ngSubmit)="onEnviar($event)">
       <div class="form-group">
         <label for="exampleInputEmail1">Usuario</label>
-        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}">
+        <input type="email" formControlName="email" class="form-control" 
+                id="exampleInputEmail1" aria-describedby="emailHelp"
+          [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 
+                      'is-valid': !Email?.errors && Email?.touched}">
         <div *ngIf="Email?.errors && Email?.touched">
           <p *ngIf="Email?.hasError('required')" class="text-danger">
-            El email es requerido.
+            El nombre de usuario es requerido.
           </p>
-          <p *ngIf="Email?.hasError('email')" class="text-danger">
-            El email debe ser válido.
+          <p *ngIf="Email?.hasError('minlength')" class="text-danger">
+            El nombre de usuario debe ser válido.
           </p>
         </div>
       </div>
@@ -32,6 +33,10 @@
           </p>
         </div>
       </div>
+      <small>Para ver el portfolio ingrese las siguientes credenciales:
+        <br>Usuario: invitado
+        <br>Contraseña: invitado
+      </small>
       <button type="submit" class="btn btn-success">Iniciar sesión</button>
     </form>
   </div>

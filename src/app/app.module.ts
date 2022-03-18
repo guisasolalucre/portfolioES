@@ -25,7 +25,6 @@ import { InterceptorService } from './servicios/interceptor.service';
     PortafolioComponent,
     Pagina404Component,
     SeccionesComponent,
-    // Pagina404ComponentComponent
   ],
   imports: [
     BrowserModule,
