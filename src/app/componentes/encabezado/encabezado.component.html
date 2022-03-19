@@ -1,11 +1,17 @@
 <div class="card info">
 
-  <div class="fotoportada">
+  <div *ngIf = "FotoPerfil != null" class="fotoportada">
     <img [src]="persona.fotoportada" alt="banner">
   </div>
+  <div *ngIf = "FotoPortada == null" class="fotoportada">
+    <img src="../../../assets/sinbanner.jpg" alt="banner">
+  </div>
   
-  <div class="fotoperfil">
+  <div *ngIf = "FotoPerfil != null" class="fotoperfil">
     <img [src]="persona.fotoperfil" alt="foto de perfil">
+  </div>
+  <div *ngIf = "FotoPerfil == null" class="fotoperfil">
+    <img src="../../../assets/sinfoto.jpg" alt="foto de perfil">
   </div>
 
   <div id="contenedor">

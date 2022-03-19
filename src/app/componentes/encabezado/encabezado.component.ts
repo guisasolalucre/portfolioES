@@ -19,4 +19,12 @@ export class EncabezadoComponent implements OnInit {
     });
   }
 
+  get FotoPerfil(){
+    return this.persona.fotoperfil
+  }
+
+  get FotoPortada(){
+    return this.persona.fotoportada
+  }
+
 }
