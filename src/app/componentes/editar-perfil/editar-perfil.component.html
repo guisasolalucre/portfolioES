@@ -1,0 +1,215 @@
+<div id="pagina">
+
+    <app-navbar></app-navbar>
+
+    <div class="card">
+        <h4>Editar mi portafolio</h4>
+        <div class="tab">
+            <div class="pestañas">
+                <ul>
+                    <li (click)="cambio('info')" 
+                        [ngClass]="{'seleccionado': id==='info'}">Información</li>
+                    <li (click)="cambio('redes')" 
+                        [ngClass]="{'seleccionado': id==='redes'}">Redes sociales</li>
+                    <li (click)="cambio('educacion')" 
+                        [ngClass]="{'seleccionado': id==='educacion'}">Educación</li>
+                    <li (click)="cambio('experiencia')" 
+                        [ngClass]="{'seleccionado': id==='experiencia'}">Experiencia
+                    </li>
+                    <li (click)="cambio('habilidades')" 
+                        [ngClass]="{'seleccionado': id==='habilidades'}">Habilidades
+                    </li>
+                    <li (click)="cambio('proyectos')" 
+                        [ngClass]="{'seleccionado': id==='proyectos'}">Proyectos</li>
+                </ul>
+            </div>
+
+            <div class="content">
+
+                <div class="content-value" *ngIf="id === 'info'">
+                    <form action="POST">
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" class="form-control" id="ubicacion">
+                        </div>
+                        <div class="form-group">
+                            <label for="ocupacion">Ocupación:</label>
+                            <input type="text" class="form-control" id="ocupacion">
+                        </div>
+                        <div class="form-group">
+                            <label for="acercade">Acerca de mí:</label>
+                            <textarea class="form-control" id="acercade" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    </form>
+                </div>
+
+                <div class="content-value" *ngIf="id === 'redes'">
+                    <form action="POST">
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn:</label>
+                            <input type="text" class="form-control" id="linkedin">
+                        </div>
+                        <div class="form-group">
+                            <label for="github">Github:</label>
+                            <input type="text" class="form-control" id="github">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">Whatsapp:</label>
+                            <input type="text" class="form-control" id="whatsapp">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    </form>
+                </div>
+
+                <div class="content-value" *ngIf="id === 'educacion'">
+                    <form action="POST">
+                        <div class="form-group">
+                            <label for="carrera">Carrera:</label>
+                            <input type="text" class="form-control" id="carrera">
+                        </div>
+                        <div class="form-group">
+                            <label for="institucion">Institución:</label>
+                            <input type="text" class="form-control" id="institucion">
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" class="form-control" id="ubicacion">
+                        </div>
+                        <div class="inicio-fin">
+                            <div class="form-group">
+                                <label for="inicio">Inicio:</label>
+                                <input type="date" class="form-control" id="inicio">
+                            </div>
+                            <div class="form-group">
+                                <label for="fin">Fin:</label>
+                                <input type="date" class="form-control" id="fin">
+                                <input type="checkbox">
+                                Hasta la actualidad
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    </form>
+                    <button class="btn btn-secondary agregar">
+                        <i class="fa fa-plus"></i>
+                        <p>Agregar educación</p>
+                    </button>
+                </div>
+
+                <div class="content-value" *ngIf="id === 'experiencia'">
+                    <form action="POST">
+                        <div class="form-group">
+                            <label for="puesto">Puesto:</label>
+                            <input type="text" class="form-control" id="puesto">
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa:</label>
+                            <input type="text" class="form-control" id="empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" class="form-control" id="ubicacion">
+                        </div>
+                        <div class="inicio-fin">
+                            <div class="form-group">
+                                <label for="inicio">Inicio:</label>
+                                <input type="date" class="form-control" id="inicio">
+                            </div>
+                            <div class="form-group">
+                                <label for="fin">Fin:</label>
+                                <input type="date" class="form-control" id="fin">
+                                <input type="checkbox">
+                                Hasta la actualidad
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción de tareas y responsabilidades:</label>
+                            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    </form>
+                    <button class="btn btn-secondary agregar">
+                        <i class="fa fa-plus"></i>
+                        <p>Agregar experiencia</p>
+                    </button>
+                </div>
+
+                <div class="content-value" *ngIf="id === 'habilidades'">
+                    <form action="POST">
+                        <div class="form-group">
+                            <label for="habilidad">Habilidad:</label>
+                            <input type="text" class="form-control" id="habilidad">
+                        </div>
+                        <div class="form-group">
+                            <label for="porcentaje">Porcentaje:</label>
+                            <input type="text" class="form-control" id="porcentaje">
+                        </div>
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    </form>
+                    <button class="btn btn-secondary agregar">
+                        <i class="fa fa-plus"></i>
+                        <p>Agregar habilidad</p>
+                    </button>
+                </div>
+
+                <div class="content-value" *ngIf="id === 'proyectos'">  
+                    <form action="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="link">Link:</label>
+                            <input type="text" class="form-control" id="link">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción del proyecto:</label>
+                            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                        </div>
+                        <div class="inicio-fin">
+                            <div class="form-group">
+                                <label for="inicio">Inicio:</label>
+                                <input type="date" class="form-control" id="inicio">
+                            </div>
+                            <div class="form-group">
+                                <label for="fin">Fin:</label>
+                                <input type="date" class="form-control" id="fin">
+                                <input type="checkbox">
+                                Hasta la actualidad
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tecnologias">Tecnologías</label>
+                            <select multiple class="form-control" id="tecnologias">
+                                <option>1</option>
+                            </select>
+                            <small>
+                                <button class="btn btn-secondary btn-sm agregar">
+                                    <i class="fa fa-plus"></i>
+                                    <p>Agregar tecnología</p>
+                                </button>
+                            </small>
+                        </div>
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    </form>
+                    <button class="btn btn-secondary agregar">
+                        <i class="fa fa-plus"></i>
+                        <p>Agregar proyecto</p>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="piedepagina" class="footer sticky-bottom">
+        <app-footer></app-footer>
+    </div>
+
+</div>

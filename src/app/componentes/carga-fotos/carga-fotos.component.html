@@ -1,0 +1,24 @@
+<div id="pagina">
+
+    <app-navbar></app-navbar>
+
+    <div class="card">
+        <h4>Carga de fotos</h4>
+        <form action="POST">
+            <div class="form-group">
+                <label for="fotoportada">Banner:</label>
+                <input type="file" class="form-control form-control-file" id="fotoportada">
+            </div>
+            <div class="form-group">
+                <label for="fotoperfil">Perfil:</label>
+                <input type="file" class="form-control form-control-file" id="fotoperfil">
+            </div>
+            <button type="submit" class="btn btn-success">Guardar cambios</button>
+        </form>
+    </div>
+
+    <div id="piedepagina" class="footer sticky-bottom">
+        <app-footer></app-footer>
+    </div>
+
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+//import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private autenticacionService:AutenticacionService,
+    //private autenticacionService:AutenticacionService,
     private router:Router,
     ) {
     this.form = this.formBuilder.group(
       {
-        email: ['',[Validators.required, Validators.minLength(8)]],
+        usuario: ['',[Validators.required, Validators.minLength(8)]],
         password: ['',[Validators.required, Validators.minLength(8)]],
         deviceInfo:this.formBuilder.group(
           {
@@ -43,12 +43,17 @@ export class LoginComponent implements OnInit {
     return this.form.get("password");
   };
 
-  onEnviar(evento:Event){
+  /*onEnviar(evento:Event){
     evento.preventDefault;
     this.autenticacionService.iniciarSesion(this.form.value).subscribe(data=>{
       console.log(JSON.stringify(data));
       this.router.navigate(["/portafolio"]);
     })
-  }
+
+
+      (ngSubmit)="onEnviar($event)"
+
+
+  }*/
 
 }

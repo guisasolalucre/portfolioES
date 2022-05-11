@@ -1,16 +1,16 @@
 <div class="card info">
 
-  <div *ngIf = "FotoPerfil != null" class="fotoportada">
+  <div *ngIf="persona.fotoportada != null" class="fotoportada">
     <img [src]="persona.fotoportada" alt="banner">
   </div>
-  <div *ngIf = "FotoPortada == null" class="fotoportada">
+  <div *ngIf="persona.fotoportada == null" class="fotoportada">
     <img src="../../../assets/sinbanner.jpg" alt="banner">
   </div>
-  
-  <div *ngIf = "FotoPerfil != null" class="fotoperfil">
+
+  <div *ngIf="persona.fotoperfil != null" class="fotoperfil">
     <img [src]="persona.fotoperfil" alt="foto de perfil">
   </div>
-  <div *ngIf = "FotoPerfil == null" class="fotoperfil">
+  <div *ngIf="persona.fotoperfil == null" class="fotoperfil">
     <img src="../../../assets/sinfoto.jpg" alt="foto de perfil">
   </div>
 
@@ -24,7 +24,10 @@
 
     <div id="editar-perfil">
       <div class="boton">
-        <button type="button" class="btn btn-light btn-sm btn-block">Editar perfil</button>
+        <button type="button" class="btn btn-light btn-sm btn-block">Cambiar fotos</button>
+      </div>
+      <div class="boton">
+        <button type="button" class="btn btn-light btn-sm btn-block">Editar información</button>
       </div>
     </div>
 

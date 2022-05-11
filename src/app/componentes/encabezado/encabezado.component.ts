@@ -8,7 +8,7 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 })
 export class EncabezadoComponent implements OnInit {
 
-  persona: any;
+  persona:any;
 
   constructor(private datosPortafolio:PortafolioService) { }
 
@@ -17,14 +17,6 @@ export class EncabezadoComponent implements OnInit {
       this.persona = data.persona;
       console.log(data)
     });
-  }
-
-  get FotoPerfil(){
-    return this.persona.fotoperfil
-  }
-
-  get FotoPortada(){
-    return this.persona.fotoportada
   }
 
 }

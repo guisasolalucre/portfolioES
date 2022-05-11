@@ -1,11 +1,16 @@
 <div class="tab">
     <div class="pestañas">
         <ul>
-            <li (click)="cambio('acercade')">Acerca de mí</li>
-            <li (click)="cambio('educacion')">Educación</li>
-            <li (click)="cambio('experiencia')">Experiencia</li>
-            <li (click)="cambio('habilidades')">Habilidades</li>
-            <li (click)="cambio('proyectos')">Proyectos</li>
+            <li (click)="cambio('acercade')"
+                [ngClass]="{'seleccionado': id==='acercade'}">Acerca de mí</li>
+            <li (click)="cambio('educacion')"
+                [ngClass]="{'seleccionado': id==='educacion'}">Educación</li>
+            <li (click)="cambio('experiencia')"
+                [ngClass]="{'seleccionado': id==='experiencia'}">Experiencia</li>
+            <li (click)="cambio('habilidades')"
+                [ngClass]="{'seleccionado': id==='habilidades'}">Habilidades</li>
+            <li (click)="cambio('proyectos')"
+                [ngClass]="{'seleccionado': id==='proyectos'}">Proyectos</li>
         </ul>
     </div>
 
@@ -54,7 +59,12 @@
         <div class="content-value" *ngIf="id === 'habilidades'">
             <ul>
                 <li *ngFor="let skill of listaSkills">
-
+                    <h5>{{skill.habilidad}}</h5>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" 
+                            role="progressbar"
+                            [ngStyle]="{'width': skill.nivel}"></div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -69,6 +79,7 @@
                             <i class="bi-trash-fill"></i>
                         </div>
                     </div>
+                    <p>{{proyecto.descripcion}}</p>
                     <p>{{proyecto.tecnologias}}</p>
                     <p id="duracion"><strong></strong></p>
                 </li>

@@ -24,7 +24,6 @@ img{
 
 .fotoperfil img{
     position: relative;
-    display: flex;
     max-height: 150px;
     border-radius: 50%;
 }

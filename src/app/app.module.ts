@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -12,8 +13,11 @@ import { LoginComponent } from './componentes/login/login.component';
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
 import { Pagina404Component } from './componentes/pagina404/pagina404.component';
 import { SeccionesComponent } from './componentes/secciones/secciones.component';
+
 import { PortafolioService } from './servicios/portafolio.service';
-import { InterceptorService } from './servicios/interceptor.service';
+import { CargaFotosComponent } from './componentes/carga-fotos/carga-fotos.component';
+import { EditarPerfilComponent } from './componentes/editar-perfil/editar-perfil.component';
+//import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,8 @@ import { InterceptorService } from './servicios/interceptor.service';
     PortafolioComponent,
     Pagina404Component,
     SeccionesComponent,
+    CargaFotosComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,7 @@ import { InterceptorService } from './servicios/interceptor.service';
   ],
   providers: [
     PortafolioService,
-    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+    // {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
   ],
   bootstrap: [AppComponent]
 })

@@ -12,6 +12,10 @@ export class PortafolioService {
   constructor(private http: HttpClient) { }
 
   obtenerDatos(): Observable<any> {
-    return this.http.get<any>(this.url);
+    return this.http.get('./assets/data/data.json');
   }
+
+  /*obtenerDatos(): Observable<any> {
+    return this.http.get<any>(this.url);
+  }*/
 }
