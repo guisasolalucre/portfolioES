@@ -1,9 +1,12 @@
 <div id="pagina">
 
-    <app-navbar></app-navbar>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <h5>Cargar fotos</h5>
+        <button id="atras" class="btn btn-danger my-2 my-sm-0" type="button"
+        [routerLink]="['/portafolio']">Volver</button>
+    </nav>
 
     <div class="card">
-        <h4>Carga de fotos</h4>
         <form action="POST">
             <div class="form-group">
                 <label for="fotoportada">Banner:</label>
@@ -15,10 +18,6 @@
             </div>
             <button type="submit" class="btn btn-success">Guardar cambios</button>
         </form>
-    </div>
-
-    <div id="piedepagina" class="footer sticky-bottom">
-        <app-footer></app-footer>
     </div>
 
 </div>

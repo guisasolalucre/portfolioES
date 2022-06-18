@@ -49,3 +49,19 @@
 .seleccionado{
     text-decoration: overline;
 }
+
+.navbar{
+    position: fixed top;
+    justify-content: space-between;
+    min-height: 59px;
+    max-height: 59px;
+}
+
+h5{
+    color: white;
+    margin-left: .7em; 
+}
+
+#atras{
+    margin-right: .7em;
+}

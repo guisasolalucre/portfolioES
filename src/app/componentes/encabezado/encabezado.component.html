@@ -1,18 +1,19 @@
 <div class="card info">
 
-  <div *ngIf="persona.fotoportada != null" class="fotoportada">
-    <img [src]="persona.fotoportada" alt="banner">
-  </div>
-  <div *ngIf="persona.fotoportada == null" class="fotoportada">
-    <img src="../../../assets/sinbanner.jpg" alt="banner">
-  </div>
+  <div *ngIf="(persona.fotoportada == null || persona.fotoportada == '');
+        then sinbanner 
+        else conbanner"
+        class="fotoportada"></div>
+  <ng-template #sinbanner><img src="../../../assets/sinbanner.jpg" alt="banner" class="fotoportada"></ng-template>
+  <ng-template #conbanner><img [src]="persona.fotoportada" alt="banner" class="fotoportada"></ng-template>
 
-  <div *ngIf="persona.fotoperfil != null" class="fotoperfil">
-    <img [src]="persona.fotoperfil" alt="foto de perfil">
-  </div>
-  <div *ngIf="persona.fotoperfil == null" class="fotoperfil">
-    <img src="../../../assets/sinfoto.jpg" alt="foto de perfil">
-  </div>
+
+  <div *ngIf="(persona.fotoperfil == null || persona.fotoperfil == '');
+        then sinfoto 
+        else confoto"
+        class="fotoperfil"></div>
+  <ng-template #sinfoto><img src="../../../assets/sinfoto.jpg" alt="foto de perfil" class="fotoperfil"></ng-template>
+  <ng-template #confoto><img [src]="persona.fotoperfil" alt="foto de perfil" class="fotoperfil"></ng-template>
 
   <div id="contenedor">
 
@@ -23,12 +24,10 @@
     </div>
 
     <div id="editar-perfil">
-      <div class="boton">
-        <button type="button" class="btn btn-light btn-sm btn-block">Cambiar fotos</button>
-      </div>
-      <div class="boton">
-        <button type="button" class="btn btn-light btn-sm btn-block">Editar información</button>
-      </div>
+      <button type="button" class="btn btn-light btn-sm btn-block" [routerLink]="['/cargar-fotos']">Cambiar
+        fotos</button>
+      <button type="button" class="btn btn-light btn-sm btn-block" [routerLink]="['/editar-info']">Editar
+        información</button>
     </div>
 
   </div>

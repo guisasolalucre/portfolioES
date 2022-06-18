@@ -1,25 +1,21 @@
-#paginalogin{
+#paginaconstruccion{
     width: 100vw;
 }
 
 .card{
     position: relative;
-    width: 410px;
+    width: 600px;
     padding: 2%;
     margin: auto;
     margin-top: 3%;
     margin-bottom: 3%;
     text-align: center;
+    align-items: center;
 }
 
-.form-group{
-    margin-bottom: 4%;
-}
-
-.credenciales{
-    border: 1px solid #E0E0E0;
-    border-radius: 5px;
-    padding: 5px;
+.btn{
+    width: 200px;
+    margin-top: 10%;
 }
 
 .navbar{

@@ -39,12 +39,6 @@ ul li{
     padding: 20px;
 }
 
-.acercade, .cvtitulo, .botones{
-    display: flex;
-    justify-content: space-between;
-}
-
 .seleccionado{
-    text-decoration: overline;
+    text-decoration: underline double cyan;
 }
-

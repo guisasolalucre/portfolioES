@@ -11,12 +11,12 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
-import { Pagina404Component } from './componentes/pagina404/pagina404.component';
 import { SeccionesComponent } from './componentes/secciones/secciones.component';
 
 import { PortafolioService } from './servicios/portafolio.service';
 import { CargaFotosComponent } from './componentes/carga-fotos/carga-fotos.component';
 import { EditarPerfilComponent } from './componentes/editar-perfil/editar-perfil.component';
+import { ConstruccionComponent } from './componentes/construccion/construccion.component';
 //import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
@@ -27,10 +27,10 @@ import { EditarPerfilComponent } from './componentes/editar-perfil/editar-perfil
     FooterComponent,
     LoginComponent,
     PortafolioComponent,
-    Pagina404Component,
     SeccionesComponent,
     CargaFotosComponent,
     EditarPerfilComponent,
+    ConstruccionComponent,
   ],
   imports: [
     BrowserModule,

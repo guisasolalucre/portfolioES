@@ -1,9 +1,8 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a href="https://argentinaprograma.inti.gob.ar/" target="_blank">
-        <img src="./assets/logos.png" alt="argentina programa">
+        <img src="./assets/argprogsf.png" alt="argentina programa">
     </a>
-
-    <div class="botones">
+        <!--
         <div class="redessociales">
 
             <a class="btn btn-outline-light m-1" href="https://www.linkedin.com/in/{{persona.linkedin}}/"
@@ -25,10 +24,9 @@
                 role="button">
                 <i class="fas fa-envelope"></i>
             </a>
-
-
             
-        </div>
-        <button id="login" class="btn btn-outline-success my-2 my-sm-0" type="button">Login</button>
-    </div>
+        </div> 
+    -->
+        <button id="logout" class="btn btn-outline-danger my-2 my-sm-0" type="button"
+        [routerLink]="['/login']">Logout</button>
 </nav>

@@ -1,6 +1,11 @@
 <div id="paginalogin">
 
-  <app-navbar></app-navbar>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <h3>Lucrecia Guisasola</h3>
+    <a href="https://argentinaprograma.inti.gob.ar/" target="_blank">
+        <img src="./assets/argprogsf.png" alt="argentina programa">
+    </a>
+  </nav>
 
   <div class="card">
     <h2>Iniciar sesión</h2>
@@ -39,7 +44,8 @@
           <br>Contraseña: invitado
         </small>
       </div>
-      <button type="submit" class="btn btn-success">Iniciar sesión</button>
+      <button type="submit" class="btn btn-success"
+      [routerLink]="['/portafolio']">Iniciar sesión</button>
     </form>
   </div>
 

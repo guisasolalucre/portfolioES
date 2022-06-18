@@ -1,11 +1,9 @@
 .navbar{
     position: fixed top;
-    justify-content: space-between;
-    max-height: 59px;
-}
-
-.botones {
     display: flex;
+    justify-content: space-between;
+    min-height: 59px;
+    max-height: 59px;
 }
 
 .redessociales{
@@ -27,6 +25,6 @@ img{
     max-height: 40px;
 }
 
-#login{
+#logout{
     margin-right: .7em;
 }
