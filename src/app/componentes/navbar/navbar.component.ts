@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortafolio.obtenerDatos().subscribe(data => {
-      this.persona = data.persona;
+      this.persona = data;
     });
   }
 

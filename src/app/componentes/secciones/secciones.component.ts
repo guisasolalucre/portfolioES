@@ -13,18 +13,26 @@ export class SeccionesComponent implements OnInit {
   persona: any;
   listaExperiencia: any;
   listaEducacion: any;
-  listaSkills: any;
+  listaHabilidades: any;
   listaProyectos: any;
 
   constructor(private datosPortafolio:PortafolioService) { }
 
   ngOnInit(): void {
     this.datosPortafolio.obtenerDatos().subscribe(data => {
-      this.persona = data.persona;
-      this.listaExperiencia = data.experiencia;
-      this.listaEducacion = data.educacion;
-      this.listaSkills = data.skills;
-      this.listaProyectos = data.proyectos;
+      this.persona = data;
+    });
+    this.datosPortafolio.obtenerEducacion().subscribe(data => {
+      this.listaEducacion = data;
+    });
+    this.datosPortafolio.obtenerExperiencia().subscribe(data => {
+      this.listaExperiencia = data;
+    });
+    this.datosPortafolio.obtenerHabilidades().subscribe(data => {
+      this.listaHabilidades = data;
+    });
+    this.datosPortafolio.obtenerProyectos().subscribe(data => {
+      this.listaProyectos = data;
     });
   }
 

@@ -36,7 +36,18 @@ ul li{
 }
 
 .content{
-    padding: 20px;
+    padding: 2%;
+}
+
+.content-value ul li{
+    padding-bottom: 1%;
+    border-bottom: 1px solid gray;
+    margin-bottom: 1%;
+}
+
+.content-value ul li:last-child{
+    border-bottom: none;
+    margin-bottom: -2%;
 }
 
 .seleccionado{

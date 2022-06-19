@@ -36,6 +36,7 @@
                 <li *ngFor="let experiencia of listaExperiencia">
                     <div class="cvtitulo"><h5>{{experiencia.puesto}}</h5></div>
                     <p>{{experiencia.empresa}}</p>
+                    <p>{{experiencia.descripcion}}</p>
                     <p id="duracion"><strong></strong></p>
                 </li>
             </ul>
@@ -43,12 +44,12 @@
 
         <div class="content-value" *ngIf="id === 'habilidades'">
             <ul>
-                <li *ngFor="let skill of listaSkills">
+                <li *ngFor="let skill of listaHabilidades">
                     <h5>{{skill.habilidad}}</h5>
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" 
                             role="progressbar"
-                            [ngStyle]="{'width': skill.nivel}"></div>
+                            [ngStyle]="{'width': skill.porcentaje}"></div>
                     </div>
                 </li>
             </ul>
@@ -59,9 +60,6 @@
                 <li *ngFor="let proyecto of listaProyectos">
                     <div class="cvtitulo"><h5><a href="{{proyecto.link}}">{{proyecto.nombre}}</a></h5></div>
                     <p>{{proyecto.descripcion}}</p>
-
-                    <p>Tecnologías: {{proyecto.tecnologias}}</p>
-                    <p id="duracion"><strong></strong></p>
                 </li>
             </ul>
         </div>

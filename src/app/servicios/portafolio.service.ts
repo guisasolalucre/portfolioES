@@ -12,11 +12,23 @@ export class PortafolioService {
   constructor(private http: HttpClient) { }
 
   obtenerDatos(): Observable<any> {
-    return this.http.get(this.url + "/persona");
+    return this.http.get(this.url + "/datos");
   }
-/*
+
+  obtenerEducacion(): Observable<any> {
+    return this.http.get(this.url + "/verEducacion")
+  }
+
   obtenerExperiencia(): Observable<any> {
-    return this.http.get(this.url + "/experiencia");
+    return this.http.get(this.url + "/verExperiencia")
   }
-  */
+
+  obtenerHabilidades(): Observable<any> {
+    return this.http.get(this.url + "/verHabilidades")
+  }
+
+  obtenerProyectos(): Observable<any> {
+    return this.http.get(this.url + "/verProyectos")
+  }
+
 }
