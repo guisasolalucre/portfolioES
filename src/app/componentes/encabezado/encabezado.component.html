@@ -1,19 +1,19 @@
 <div class="card info">
 
-  <div *ngIf="(persona.fotoportada == null || persona.fotoportada == '');
+  <div *ngIf="(persona.foto_portada == null || persona.foto_portada == '');
         then sinbanner 
         else conbanner"
         class="fotoportada"></div>
   <ng-template #sinbanner><img src="../../../assets/sinbanner.jpg" alt="banner" class="fotoportada"></ng-template>
-  <ng-template #conbanner><img [src]="persona.fotoportada" alt="banner" class="fotoportada"></ng-template>
+  <ng-template #conbanner><img [src]="persona.foto_portada" alt="banner" class="fotoportada"></ng-template>
 
 
-  <div *ngIf="(persona.fotoperfil == null || persona.fotoperfil == '');
+  <div *ngIf="(persona.foto_perfil == null || persona.foto_perfil == '');
         then sinfoto 
         else confoto"
         class="fotoperfil"></div>
   <ng-template #sinfoto><img src="../../../assets/sinfoto.jpg" alt="foto de perfil" class="fotoperfil"></ng-template>
-  <ng-template #confoto><img [src]="persona.fotoperfil" alt="foto de perfil" class="fotoperfil"></ng-template>
+  <ng-template #confoto><img [src]="persona.foto_perfil" alt="foto de perfil" class="fotoperfil"></ng-template>
 
   <div id="contenedor">
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortafolioService } from 'src/app/servicios/portafolio.service';
+import { Persona } from 'src/app/interfaces/Persona';
+import { PersonaService } from 'src/app/servicios/servicios-modelo/persona.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -8,9 +9,9 @@ import { PortafolioService } from 'src/app/servicios/portafolio.service';
 })
 export class EncabezadoComponent implements OnInit {
 
-  persona:any;
+  persona!: Persona;
 
-  constructor(private datosPortafolio:PortafolioService) { }
+  constructor(private datosPortafolio:PersonaService) { }
 
   ngOnInit(): void {
     this.datosPortafolio.obtenerDatos().subscribe(data => {
@@ -19,3 +20,4 @@ export class EncabezadoComponent implements OnInit {
   }
 
 }
+ 

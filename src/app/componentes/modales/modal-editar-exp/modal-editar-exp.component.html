@@ -1,0 +1,90 @@
+<i 
+    type="button" 
+    class="fa-solid fa-pencil" 
+    id="toggleEditarExp" 
+    (click)="modal.open(contenido)">
+
+</i>
+
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Editar experiencia</h5>
+        <i class="fa-solid fa-xmark" (click)="modal.dismiss()"></i>
+    </div>
+    <div class="modal-body">
+        <form class="add-form" 
+            id="formul" 
+            #formDetailUser="ngForm" 
+            (ngSubmit)="onSubmit(formDetailUser)"
+        >
+            <div class="form-control">
+                <label for="puesto">Puesto</label>
+                <input 
+                    type="text" 
+                    name="puesto" 
+                    id="puesto" 
+                    placeholder="Puesto" 
+                    [(ngModel)]="puesto" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="empresa">Empresa</label>
+                <input 
+                    type="text" 
+                    name="empresa" 
+                    id="empresa" 
+                    placeholder="Empresa"
+                    [(ngModel)]="empresa" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="ubicacion">Ubicacion</label>
+                <input 
+                    type="text" 
+                    name="ubicacion" 
+                    id="ubicacion" 
+                    placeholder="Ubicacion" 
+                    [(ngModel)]="ubicacion" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="inicio">Inicio</label>
+                <input 
+                    type="string" 
+                    name="inicio" 
+                    id="inicio" 
+                    placeholder="Fecha de inicio" 
+                    [(ngModel)]="inicio" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="fin">Fin</label>
+                <input 
+                    type="string" 
+                    name="fin" 
+                    id="fin" 
+                    placeholder="Fecha de finalización" 
+                    [(ngModel)]="fin" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="descripcion">Descripción</label>
+                <input 
+                    type="string" 
+                    name="descripcion" 
+                    id="descripcion" 
+                    placeholder="Descripción" 
+                    [(ngModel)]="descripcion" 
+                />
+            </div>
+            <div class="modal-footer">
+                <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    (click)="modal.close()"
+                >Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

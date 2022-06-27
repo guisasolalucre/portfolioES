@@ -1,0 +1,50 @@
+<i 
+    type="button" 
+    class="fa-solid fa-pencil" 
+    id="toggleEditarExp" 
+    (click)="modal.open(contenido)">
+
+</i>
+
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Editar habilidad</h5>
+        <i class="fa-solid fa-xmark" (click)="modal.dismiss()"></i>
+    </div>
+    <div class="modal-body">
+        <form class="add-form" 
+            id="formul" 
+            #formDetailUser="ngForm" 
+            (ngSubmit)="onSubmit(formDetailUser)"
+        >
+            <div class="form-control">
+                <label for="nombre">Nombre</label>
+                <input 
+                    type="text" 
+                    name="nombre" 
+                    id="nombre" 
+                    placeholder="Nombre" 
+                    [(ngModel)]="nombre" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="porcentaje">Porcentaje</label>
+                <input 
+                    type="text" 
+                    name="porcentaje" 
+                    id="porcentaje" 
+                    placeholder="Porcentaje"
+                    [(ngModel)]="porcentaje" 
+                />
+            </div>
+            <div class="modal-footer">
+                <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    (click)="modal.close()"
+                >Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

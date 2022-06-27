@@ -1,0 +1,85 @@
+<button 
+    type="button" 
+    class="btn btn-light" 
+    id="toggleAgregarExp" 
+    (click)="modal.open(contenido)">
+
+    <div>
+        <i class="fa-solid fa-plus"></i>
+        Agregar proyecto
+    </div>
+
+</button>
+
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Agregar proyecto</h5>
+        <i class="fa-solid fa-xmark" (click)="modal.dismiss()"></i>
+    </div>
+    <div class="modal-body">
+        <form class="add-form" 
+            id="formul" 
+            #formDetailUser="ngForm" 
+            (ngSubmit)="onSubmit(formDetailUser)"
+        >
+            <div class="form-control">
+                <label for="nombre">Nombre</label>
+                <input 
+                    type="text" 
+                    name="nombre" 
+                    id="nombre" 
+                    placeholder="Nombre" 
+                    [(ngModel)]="nombre" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="link">Link</label>
+                <input 
+                    type="text" 
+                    name="link" 
+                    id="link" 
+                    placeholder="Link"
+                    [(ngModel)]="link" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="descripcion">Descripción</label>
+                <input 
+                    type="string" 
+                    name="descripcion" 
+                    id="descripcion" 
+                    placeholder="Descripción" 
+                    [(ngModel)]="descripcion" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="inicio">Inicio</label>
+                <input 
+                    type="string" 
+                    name="inicio" 
+                    id="inicio" 
+                    placeholder="Fecha de inicio" 
+                    [(ngModel)]="inicio" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="fin">Fin</label>
+                <input 
+                    type="string" 
+                    name="fin" 
+                    id="fin" 
+                    placeholder="Fecha de finalización" 
+                    [(ngModel)]="fin" 
+                />
+            </div>
+            <div class="modal-footer">
+                <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    (click)="modal.close()"
+                >Agregar</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

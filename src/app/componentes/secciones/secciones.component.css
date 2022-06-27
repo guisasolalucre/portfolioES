@@ -53,3 +53,14 @@ ul li{
 .seleccionado{
     text-decoration: underline double cyan;
 }
+
+.cvtitulo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edicion{
+    width: 5%;
+    display: flex;
+    justify-content: space-between;
+}
