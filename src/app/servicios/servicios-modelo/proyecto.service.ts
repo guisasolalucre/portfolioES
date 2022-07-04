@@ -29,7 +29,7 @@ export class ProyectoService {
   }
 
   agregarProyecto(proy:Proyecto):Observable<Proyecto>{
-    return this.http.post<Proyecto>(`${this.url}/nuevaProyecto`, proy, httpOptions)
+    return this.http.post<Proyecto>(`${this.url}/nuevoProyecto`, proy, httpOptions)
   }
 
   editarProyecto(proy:Proyecto):Observable<Proyecto>{

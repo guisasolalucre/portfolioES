@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Educacion } from 'src/app/interfaces/Educacion';
 import { EducacionService } from 'src/app/servicios/servicios-modelo/educacion.service';
@@ -11,7 +11,6 @@ import { EducacionService } from 'src/app/servicios/servicios-modelo/educacion.s
 export class ModalEliminarEduComponent implements OnInit {
 
   @Input() educacion!: Educacion;
-  @Output() onEliminarEducacion = new EventEmitter();
 
   constructor(
     public modal:NgbModal,
@@ -22,7 +21,9 @@ export class ModalEliminarEduComponent implements OnInit {
   }
 
   onSubmit(){
-    this.onEliminarEducacion.emit(this.educacion);
+    this.educacionService.eliminarEducacion(this.educacion).subscribe((data)=>(
+      console.log("eliminado")
+    ));
   }
 
 }

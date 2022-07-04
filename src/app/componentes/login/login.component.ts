@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
+import { Persona } from 'src/app/interfaces/Persona';
+import { UiService } from 'src/app/servicios/ui.service';
 //import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
@@ -10,50 +14,43 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
+  @Input() persona!: Persona;
+
+  usuario: string = "";
+  password: string = "";
+  texto: string = "Iniciar sesión";
+  inicio: boolean = false;
+  subscription?: Subscription;
 
   constructor(
-    private formBuilder:FormBuilder,
-    //private autenticacionService:AutenticacionService,
-    private router:Router,
-    ) {
-    this.form = this.formBuilder.group(
-      {
-        usuario: ['',[Validators.required, Validators.minLength(8)]],
-        password: ['',[Validators.required, Validators.minLength(8)]],
-        deviceInfo:this.formBuilder.group(
-          {
-            deviceId: ["17867868768"],
-            deviceType: ["DEVICE_TYPE_ANDROID"],
-            notificationToken: ["67657575eececc34"]
-          }
-        )
-      }
-    )
-   }
+    public modal: NgbModal,
+    private uiService: UiService
+  ) { }
 
   ngOnInit(): void {
-  };
+  }
 
-  get Usuario(){
-    return this.form.get("usuario");
-  };
+  onSubmit(formDetailUser: NgForm){
+    const {usuario, password} = this
+    const loginUser = {usuario, password }
+    console.log(loginUser);
+    formDetailUser.reset();
 
-  get Password(){
-    return this.form.get("password");
-  };
+    if (usuario === this.persona.usuario && 
+      password === this.persona.password){
+      this.uiService.toggleEdit();
+      this.inicio = this.uiService.estadoBoolean();
+      console.log("Sera posible ESTO: "+this.uiService.estadoBoolean());
+    }
+    else {
+      alert("Usuario o contraseña incorrectos.")
+    }
+  }
 
-  /*onEnviar(evento:Event){
-    evento.preventDefault;
-    this.autenticacionService.iniciarSesion(this.form.value).subscribe(data=>{
-      console.log(JSON.stringify(data));
-      this.router.navigate(["/portafolio"]);
-    })
-
-
-      (ngSubmit)="onEnviar($event)"
-
-
-  }*/
+  cerrarSesion(){
+    this.uiService.toggleEdit();
+    this.inicio = this.uiService.estadoBoolean();
+    console.log("Sera posible ESTO: "+this.uiService.estadoBoolean());
+  }
 
 }

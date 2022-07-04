@@ -11,10 +11,9 @@ img{
     overflow: hidden;
 }
 
-
 .fotoperfil{
     position: absolute;
-    top: 200px;
+    top: 180px;
     left: 20px;
     max-height: 150px;
     min-height: 150px;
@@ -53,3 +52,10 @@ button{
     margin: 3px;
 }
 
+p, h3{
+    margin-bottom: -1px;
+}
+
+h3{
+    font-size: x-large;
+}

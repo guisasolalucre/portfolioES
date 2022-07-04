@@ -27,22 +27,24 @@
                         <h5>{{educacion.carrera}}</h5>
                         <div class="edicion">
                             <app-modal-editar-edu
+                                *ngIf="this.logueado"
                                 [educacion]="this.educacion"
                             ></app-modal-editar-edu>
                             
                             <app-modal-eliminar-edu
-                                (onEliminarEducacion)="eliminarEducacion($event)"
+                                *ngIf="this.logueado"
+                                [educacion]="this.educacion"
                             ></app-modal-eliminar-edu>
-                            
                         </div>
                     </div>
                     <h6>{{educacion.institucion}}</h6>
                     <p>{{educacion.ubicacion}}</p>
-                    <p id="duracion"><strong></strong></p>
+                    <p id="duracion">{{educacion.inicio}} - {{educacion.fin}}</p>
                 </li>
                 <li>
                     <div class="cvtitulo">
                         <app-modal-agregar-edu
+                            *ngIf="this.logueado"
                             (onAgregarEducacion)="agregarEducacion($event)"
                         ></app-modal-agregar-edu>
                     </div>
@@ -57,10 +59,12 @@
                         <h5>{{experiencia.puesto}}</h5>
                         <div class="edicion">
                             <app-modal-editar-exp
+                                *ngIf="this.logueado"
                                 [experiencia]="this.experiencia"
                             ></app-modal-editar-exp>
                             <!--
                             <app-modal-eliminar-exp
+                                *ngIf="this.logueado"
                                 [experiencia]="this.experiencia"
                             ></app-modal-eliminar-exp>
                             -->
@@ -68,11 +72,12 @@
                     </div>
                     <p>{{experiencia.empresa}}</p>
                     <p>{{experiencia.descripcion}}</p>
-                    <p id="duracion"><strong></strong></p>
+                    <p id="duracion">{{experiencia.inicio}} - {{experiencia.fin}}</p>
                 </li>
                 <li>
                     <div class="cvtitulo">
                         <app-modal-agregar-exp
+                            *ngIf="this.logueado"
                             (onAgregarExperiencia)="agregarExperiencia($event)"
                         ></app-modal-agregar-exp>
                     </div>
@@ -87,25 +92,27 @@
                         <h5>{{habilidad.nombre}}</h5>
                         <div class="edicion">
                             <app-modal-editar-hab
+                                *ngIf="this.logueado"
                                 [habilidad]="this.habilidad"
                             ></app-modal-editar-hab>
                             <!--
                             <app-modal-eliminar-hab
+                                *ngIf="this.logueado"
                                 [habilidad]="this.habilidad"
                             ></app-modal-eliminar-hab>
                             -->
                         </div>
                     </div>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" 
-                            role="progressbar"
-                            [ngStyle]="{'width': habilidad.porcentaje}">
+                        <div class="progress">
+                            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="cvtitulo">
                         <app-modal-agregar-hab
+                            *ngIf="this.logueado"
                             (onAgregarHabilidad)="agregarHabilidad($event)"
                         ></app-modal-agregar-hab>
                     </div>
@@ -120,20 +127,24 @@
                         <h5><a href="{{proyecto.link}}">{{proyecto.nombre}}</a></h5>
                         <div class="edicion">
                             <app-modal-editar-proy
+                                *ngIf="this.logueado"
                                 [proyecto]="this.proyecto"
                             ></app-modal-editar-proy>
                             <!--- 
                             <app-modal-eliminar-proy
+                                *ngIf="this.logueado"
                                 [proyecto]="this.proyecto"
                             ></app-modal-eliminar-proy>
                             -->
                         </div>
                     </div>
                     <p>{{proyecto.descripcion}}</p>
+                    <p id="duracion">{{proyecto.inicio}} - {{proyecto.fin}}</p>
                 </li>
                 <li>
                     <div class="cvtitulo">
                         <app-modal-agregar-proy
+                            *ngIf="this.logueado"
                             (onAgregarProyecto)="agregarProyecto($event)"
                         ></app-modal-agregar-proy>
                     </div>

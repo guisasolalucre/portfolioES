@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
@@ -12,11 +13,9 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
 import { SeccionesComponent } from './componentes/secciones/secciones.component';
-import { CargaFotosComponent } from './componentes/carga-fotos/carga-fotos.component';
-import { EditarPerfilComponent } from './componentes/editar-perfil/editar-perfil.component';
 import { ConstruccionComponent } from './componentes/construccion/construccion.component';
 
-import { PersonaService } from './servicios/servicios-modelo/persona.service';
+
 import { ModalAgregarEduComponent } from './componentes/modales/modal-agregar-edu/modal-agregar-edu.component';
 import { ModalAgregarExpComponent } from './componentes/modales/modal-agregar-exp/modal-agregar-exp.component';
 import { ModalAgregarHabComponent } from './componentes/modales/modal-agregar-hab/modal-agregar-hab.component';
@@ -29,6 +28,9 @@ import { ModalEliminarEduComponent } from './componentes/modales/modal-eliminar-
 import { ModalEliminarExpComponent } from './componentes/modales/modal-eliminar-exp/modal-eliminar-exp.component';
 import { ModalEliminarHabComponent } from './componentes/modales/modal-eliminar-hab/modal-eliminar-hab.component';
 import { ModalEliminarProyComponent } from './componentes/modales/modal-eliminar-proy/modal-eliminar-proy.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { PersonaService } from './servicios/servicios-modelo/persona.service';
 //import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
@@ -40,8 +42,6 @@ import { ModalEliminarProyComponent } from './componentes/modales/modal-eliminar
     LoginComponent,
     PortafolioComponent,
     SeccionesComponent,
-    CargaFotosComponent,
-    EditarPerfilComponent,
     ConstruccionComponent,
     ModalAgregarEduComponent,
     ModalAgregarExpComponent,
@@ -63,6 +63,8 @@ import { ModalEliminarProyComponent } from './componentes/modales/modal-eliminar
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
+    MatProgressBarModule,
+    NoopAnimationsModule,
   ],
   providers: [
     PersonaService,

@@ -20,10 +20,6 @@ body{
     color: rgb(230, 230, 230);
 }
 
-p, h4{
-    margin: -1px;
-}
-
 #contenido{
     box-sizing: border-box;
     margin: 5px;

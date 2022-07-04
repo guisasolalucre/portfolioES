@@ -25,7 +25,7 @@ ul li{
     color: white;
     font-size: 16px;
     padding: 0 24px;
-    font-weight: 600;
+    font-weight: 300;
     cursor: pointer;
     text-align: center;
     position: relative;
@@ -51,7 +51,8 @@ ul li{
 }
 
 .seleccionado{
-    text-decoration: underline double cyan;
+    text-decoration: underline double;
+    font-weight: 500 !important;
 }
 
 .cvtitulo{
@@ -63,4 +64,19 @@ ul li{
     width: 5%;
     display: flex;
     justify-content: space-between;
+}
+
+p, h5, h6{
+    margin-bottom: -1px;
+}
+
+h5{
+    text-decoration: underline solid 1px;
+    font-size: large;
+    font-weight: 500;
+}
+
+h6{
+    font-size: medium;
+    font-weight: 500;
 }

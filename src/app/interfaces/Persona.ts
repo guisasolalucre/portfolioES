@@ -11,4 +11,6 @@ export interface Persona {
     linkedin: string;
     whatsapp: string;
     email: string;
+    usuario: string;
+    password: string;
 }

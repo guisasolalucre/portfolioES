@@ -9,6 +9,7 @@ import { EducacionService } from 'src/app/servicios/servicios-modelo/educacion.s
 import { ExperienciaService } from 'src/app/servicios/servicios-modelo/experiencia.service';
 import { HabilidadService } from 'src/app/servicios/servicios-modelo/habilidad.service';
 import { ProyectoService } from 'src/app/servicios/servicios-modelo/proyecto.service';
+import { UiService } from 'src/app/servicios/ui.service';
 
 @Component({
   selector: 'app-secciones',
@@ -22,6 +23,7 @@ export class SeccionesComponent implements OnInit {
   id:String = "acercade";
 
   persona!: Persona;
+  logueado: boolean = true;
 
   listaEducacion: Educacion[] = [];
   listaExperiencia: Experiencia[] = [];
@@ -32,9 +34,12 @@ export class SeccionesComponent implements OnInit {
               private educacionService: EducacionService,
               private experienciaService: ExperienciaService,
               private habilidadService: HabilidadService,
-              private proyectoService: ProyectoService) { }
+              private proyectoService: ProyectoService,
+              private uiService : UiService) { }
 
   ngOnInit(): void {
+    this.logueado = this.uiService.estadoBoolean();
+
     this.datosPortafolio.obtenerDatos().subscribe(data => {
       this.persona = data;
     });

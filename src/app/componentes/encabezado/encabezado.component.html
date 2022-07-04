@@ -11,9 +11,10 @@
   <div *ngIf="(persona.foto_perfil == null || persona.foto_perfil == '');
         then sinfoto 
         else confoto"
-        class="fotoperfil"></div>
+        class="fotoperfil">
+  </div>
   <ng-template #sinfoto><img src="../../../assets/sinfoto.jpg" alt="foto de perfil" class="fotoperfil"></ng-template>
-  <ng-template #confoto><img [src]="persona.foto_perfil" alt="foto de perfil" class="fotoperfil"></ng-template>
+  <ng-template #confoto><img src="{{persona.foto_perfil}}" alt="foto de perfil" class="fotoperfil"></ng-template>
 
   <div id="contenedor">
 
@@ -24,10 +25,7 @@
     </div>
 
     <div id="editar-perfil">
-      <button type="button" class="btn btn-light btn-sm btn-block" [routerLink]="['/cargar-fotos']">Cambiar
-        fotos</button>
-      <button type="button" class="btn btn-light btn-sm btn-block" [routerLink]="['/editar-info']">Editar
-        información</button>
+      
     </div>
 
   </div>
