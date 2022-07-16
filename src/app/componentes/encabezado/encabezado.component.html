@@ -1,20 +1,20 @@
 <div class="card info">
 
-  <div *ngIf="(persona.foto_portada == null || persona.foto_portada == '');
+  <div *ngIf="(persona.fotoPortada == null || persona.fotoPortada == '');
         then sinbanner 
         else conbanner"
         class="fotoportada"></div>
   <ng-template #sinbanner><img src="../../../assets/sinbanner.jpg" alt="banner" class="fotoportada"></ng-template>
-  <ng-template #conbanner><img [src]="persona.foto_portada" alt="banner" class="fotoportada"></ng-template>
+  <ng-template #conbanner><img src="{{persona.fotoPortada}}" alt="banner" class="fotoportada"></ng-template>
 
 
-  <div *ngIf="(persona.foto_perfil == null || persona.foto_perfil == '');
+  <div *ngIf="(persona.fotoPerfil == null || persona.fotoPerfil == '');
         then sinfoto 
         else confoto"
         class="fotoperfil">
   </div>
   <ng-template #sinfoto><img src="../../../assets/sinfoto.jpg" alt="foto de perfil" class="fotoperfil"></ng-template>
-  <ng-template #confoto><img src="{{persona.foto_perfil}}" alt="foto de perfil" class="fotoperfil"></ng-template>
+  <ng-template #confoto><img src="{{persona.fotoPerfil}}" alt="foto de perfil" class="fotoperfil"></ng-template>
 
   <div id="contenedor">
 
@@ -25,7 +25,10 @@
     </div>
 
     <div id="editar-perfil">
-      
+      <app-modal-editar-info
+        *ngIf="this.logueado"
+        [persona]="this.persona"
+      ></app-modal-editar-info>
     </div>
 
   </div>

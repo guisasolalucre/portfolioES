@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Persona } from 'src/app/interfaces/Persona';
+import { Persona } from 'src/app/modelo/Persona';
 
 const httpOptions= {
   headers: new HttpHeaders({
@@ -22,12 +22,8 @@ export class PersonaService {
     return this.http.get(this.url + "/datos");
   }
 
-  editarRedes(per:Persona): Observable<Persona>{
-    return this.http.put<Persona>(`${this.url}/editarRedes/${per.id}`, per, httpOptions)
-  }
-
-  editarAcercade(per:Persona): Observable<Persona>{
-    return this.http.put<Persona>(`${this.url}/editarAcercade/${per.id}`, per, httpOptions)
+  editarPersona(per:Persona): Observable<Persona>{
+    return this.http.put<Persona>(`${this.url}/editarPersona/${per.id}`, per, httpOptions)
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from 'src/app/interfaces/Persona';
+import { Persona } from 'src/app/modelo/Persona';
 import { PersonaService } from 'src/app/servicios/servicios-modelo/persona.service';
+import { UiService } from 'src/app/servicios/ui.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -9,15 +10,20 @@ import { PersonaService } from 'src/app/servicios/servicios-modelo/persona.servi
 })
 export class EncabezadoComponent implements OnInit {
 
-  persona!: Persona;
+  persona: Persona = new Persona();
 
-  constructor(private datosPortafolio:PersonaService) { }
+  logueado: boolean = true;
+
+  constructor(private datosPortafolio:PersonaService,
+              private uiService: UiService) { }
 
   ngOnInit(): void {
+    this.logueado = this.uiService.puedeEditar();
+    console.log("encabezado log: " + this.uiService.mostrarEdicion)
+
     this.datosPortafolio.obtenerDatos().subscribe(data => {
       this.persona = data;
-    });
+    })
   }
-
 }
  

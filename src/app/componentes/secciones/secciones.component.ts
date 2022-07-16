@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Educacion } from 'src/app/interfaces/Educacion';
-import { Experiencia } from 'src/app/interfaces/Experiencia';
-import { Habilidad } from 'src/app/interfaces/Habilidad';
-import { Persona } from 'src/app/interfaces/Persona';
-import { Proyecto } from 'src/app/interfaces/Proyecto';
+import { Educacion } from 'src/app/modelo/Educacion';
+import { Experiencia } from 'src/app/modelo/Experiencia';
+import { Habilidad } from 'src/app/modelo/Habilidad';
+import { Persona } from 'src/app/modelo/Persona';
+import { Proyecto } from 'src/app/modelo/Proyecto';
 import { PersonaService } from 'src/app/servicios/servicios-modelo/persona.service';
 import { EducacionService } from 'src/app/servicios/servicios-modelo/educacion.service';
 import { ExperienciaService } from 'src/app/servicios/servicios-modelo/experiencia.service';
@@ -22,8 +22,9 @@ export class SeccionesComponent implements OnInit {
   // para que empiece mostrando acerca de
   id:String = "acercade";
 
-  persona!: Persona;
-  logueado: boolean = true;
+  persona: Persona = new Persona();
+
+  logueado: boolean = false;
 
   listaEducacion: Educacion[] = [];
   listaExperiencia: Experiencia[] = [];
@@ -38,7 +39,9 @@ export class SeccionesComponent implements OnInit {
               private uiService : UiService) { }
 
   ngOnInit(): void {
-    this.logueado = this.uiService.estadoBoolean();
+
+    this.logueado = this.uiService.puedeEditar();
+    console.log("secciones log: " + this.logueado)
 
     this.datosPortafolio.obtenerDatos().subscribe(data => {
       this.persona = data;
@@ -57,11 +60,13 @@ export class SeccionesComponent implements OnInit {
     }); 
   }
 
+
   // pestañas
   cambio(ids:String){
     this.id = ids;
   }
 
+  
   // educacion
   agregarEducacion(edu: Educacion){
     this.educacionService.agregarEducacion(edu).subscribe((data)=>(

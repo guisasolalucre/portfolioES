@@ -1,8 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { Educacion } from 'src/app/interfaces/Educacion';
+import { Educacion } from 'src/app/modelo/Educacion';
 
 @Component({
   selector: 'app-modal-agregar-edu',
@@ -21,7 +22,8 @@ export class ModalAgregarEduComponent implements OnInit {
   subscription?: Subscription;
 
   constructor(
-    public modal:NgbModal
+    public modal:NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class ModalAgregarEduComponent implements OnInit {
     const nuevaEducacion = {carrera, institucion, ubicacion, inicio, fin}
     this.onAgregarEducacion.emit(nuevaEducacion);
     formDetailUser.reset();
+    window.location.reload();
   }
 
 }

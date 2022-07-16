@@ -16,12 +16,6 @@
     margin-bottom: 4%;
 }
 
-.credenciales{
-    border: 1px solid #E0E0E0;
-    border-radius: 5px;
-    padding: 5px;
-}
-
 .navbar{
     position: fixed top;
     justify-content: space-between;

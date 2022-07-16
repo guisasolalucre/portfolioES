@@ -1,1 +1,35 @@
-<p>modal-eliminar-hab works!</p>
+<i 
+    type="button" 
+    class="fa-solid fa-trash" 
+    id="toggleEliminarHab" 
+    (click)="modal.open(contenido)">
+</i>
+
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Eliminar habilidad</h5>
+        <i class="fa-solid fa-xmark" (click)="modal.dismiss()"></i>
+    </div>
+    <div class="modal-body">
+        <form class="add-form" 
+            id="formul" 
+            #formDetailUser="ngForm" 
+            (ngSubmit)="onSubmit()"
+        >
+            <p>Está seguro que desea eliminar esta habilidad?</p>
+    
+            <div class="modal-footer">
+                <button 
+                    type="submit"
+                    class="btn btn-success"
+                    (click)="modal.close()"
+                >Eliminar</button>
+                <button
+                    class="btn btn-danger"
+                    (click)="modal.dismiss()"
+                >Volver</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Educacion } from 'src/app/interfaces/Educacion';
+import { Educacion } from 'src/app/modelo/Educacion';
 import { EducacionService } from 'src/app/servicios/servicios-modelo/educacion.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class ModalEliminarEduComponent implements OnInit {
 
   constructor(
     public modal:NgbModal,
-    public educacionService: EducacionService
+    public educacionService: EducacionService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +26,8 @@ export class ModalEliminarEduComponent implements OnInit {
     this.educacionService.eliminarEducacion(this.educacion).subscribe((data)=>(
       console.log("eliminado")
     ));
+
+    window.location.reload();
   }
 
 }

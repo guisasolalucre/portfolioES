@@ -1,0 +1,120 @@
+<i 
+    type="button" 
+    class="fa-solid fa-pencil" 
+    id="toggleEditarExp" 
+    (click)="modal.open(contenido)">
+
+</i>
+
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Editar perfil</h5>
+        <i class="fa-solid fa-xmark" (click)="modal.dismiss()"></i>
+    </div>
+    <div class="modal-body">
+        <form class="add-form" 
+            id="formul" 
+            #formDetailUser="ngForm" 
+            (ngSubmit)="onSubmit(formDetailUser)"
+        >
+            <div class="form-control">
+                <label for="acercade">Acerca de mí</label>
+                <input 
+                    type="text" 
+                    name="acercade"
+                    id="acercade" 
+                    placeholder="Acerca de mí" 
+                    [(ngModel)]="acercade" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="ocupacion">Ocupación</label>
+                <input 
+                    type="text" 
+                    name="ocupacion" 
+                    id="ocupacion" 
+                    placeholder="Ocupación"
+                    [(ngModel)]="ocupacion" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="ubicacion">Ubicacion</label>
+                <input 
+                    type="text" 
+                    name="ubicacion" 
+                    id="ubicacion" 
+                    placeholder="Ubicacion" 
+                    [(ngModel)]="ubicacion" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="fotoPerfil">Foto de perfil</label>
+                <input 
+                    type="string" 
+                    name="fotoPerfil" 
+                    id="fotoPerfil" 
+                    placeholder="Ingrese la URL" 
+                    [(ngModel)]="fotoPerfil" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="fotoPortada">Banner</label>
+                <input 
+                    type="string" 
+                    name="fotoPortada" 
+                    id="fotoPortada" 
+                    placeholder="Ingrese la URL" 
+                    [(ngModel)]="fotoPortada" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="github">Github</label>
+                <input 
+                    type="string" 
+                    name="github" 
+                    id="github" 
+                    placeholder="Github" 
+                    [(ngModel)]="github" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="linkedin">LinkedIn</label>
+                <input 
+                    type="string" 
+                    name="linkedin" 
+                    id="linkedin" 
+                    placeholder="LinkedIn" 
+                    [(ngModel)]="linkedin" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="whatsapp">Whatsapp</label>
+                <input 
+                    type="string" 
+                    name="whatsapp" 
+                    id="whatsapp" 
+                    placeholder="Whatsapp" 
+                    [(ngModel)]="whatsapp" 
+                />
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input 
+                    type="string" 
+                    name="email" 
+                    id="email" 
+                    placeholder="Email" 
+                    [(ngModel)]="email" 
+                />
+            </div>
+            <div class="modal-footer">
+                <button 
+                    type="submit" 
+                    class="btn btn-success" 
+                    (click)="modal.close()"
+                >Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

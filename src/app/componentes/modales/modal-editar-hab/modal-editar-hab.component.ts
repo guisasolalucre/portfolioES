@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { Habilidad } from 'src/app/interfaces/Habilidad';
+import { Habilidad } from 'src/app/modelo/Habilidad';
 import { HabilidadService } from 'src/app/servicios/servicios-modelo/habilidad.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class ModalEditarHabComponent implements OnInit {
 
   constructor(
     public modal:NgbModal,
-    private habilidadService: HabilidadService
+    private habilidadService: HabilidadService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,8 @@ export class ModalEditarHabComponent implements OnInit {
     ));
     
     formDetailUser.reset();
+
+    window.location.reload();
   }
 
 }

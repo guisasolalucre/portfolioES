@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { Experiencia } from 'src/app/interfaces/Experiencia';
+import { Experiencia } from 'src/app/modelo/Experiencia';
 
 @Component({
   selector: 'app-modal-agregar-exp',
@@ -22,7 +23,8 @@ export class ModalAgregarExpComponent implements OnInit {
   subscription?: Subscription;
 
   constructor(
-    public modal:NgbModal
+    public modal:NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class ModalAgregarExpComponent implements OnInit {
     const nuevaExperiencia = {puesto, empresa, ubicacion, inicio, fin, descripcion}
     this.onAgregarExperiencia.emit(nuevaExperiencia);
     formDetailUser.reset();
+    window.location.reload();
   }
 
 }

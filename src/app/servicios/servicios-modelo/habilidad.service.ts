@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Habilidad } from 'src/app/interfaces/Habilidad';
+import { Habilidad } from 'src/app/modelo/Habilidad';
 
 const httpOptions= {
   headers: new HttpHeaders({

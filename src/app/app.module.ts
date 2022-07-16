@@ -31,6 +31,7 @@ import { ModalEliminarProyComponent } from './componentes/modales/modal-eliminar
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PersonaService } from './servicios/servicios-modelo/persona.service';
+import { ModalEditarInfoComponent } from './componentes/modales/modal-editar-info/modal-editar-info.component';
 //import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
@@ -55,6 +56,7 @@ import { PersonaService } from './servicios/servicios-modelo/persona.service';
     ModalEliminarExpComponent,
     ModalEliminarHabComponent,
     ModalEliminarProyComponent,
+    ModalEditarInfoComponent,
   ],
   imports: [
     BrowserModule,

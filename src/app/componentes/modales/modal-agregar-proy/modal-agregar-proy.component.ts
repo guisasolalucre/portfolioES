@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { Proyecto } from 'src/app/interfaces/Proyecto';
+import { Proyecto } from 'src/app/modelo/Proyecto';
 
 @Component({
   selector: 'app-modal-agregar-proy',
@@ -21,7 +22,8 @@ export class ModalAgregarProyComponent implements OnInit {
   subscription?: Subscription;
 
   constructor(
-    public modal:NgbModal
+    public modal:NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class ModalAgregarProyComponent implements OnInit {
     const nuevoProyecto = {nombre, link, descripcion, inicio, fin}
     this.onAgregarProyecto.emit(nuevoProyecto);
     formDetailUser.reset();
+    window.location.reload();
   }
 
 }

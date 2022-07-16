@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { Experiencia } from 'src/app/interfaces/Experiencia';
+import { Experiencia } from 'src/app/modelo/Experiencia';
 import { ExperienciaService } from 'src/app/servicios/servicios-modelo/experiencia.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class ModalEditarExpComponent implements OnInit {
 
   constructor(
     public modal:NgbModal,
-    private experienciaService: ExperienciaService
+    private experienciaService: ExperienciaService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -46,6 +48,8 @@ export class ModalEditarExpComponent implements OnInit {
     ));
     
     formDetailUser.reset();
+
+    window.location.reload();
   }
 
 }

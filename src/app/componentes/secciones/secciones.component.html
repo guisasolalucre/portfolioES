@@ -62,12 +62,12 @@
                                 *ngIf="this.logueado"
                                 [experiencia]="this.experiencia"
                             ></app-modal-editar-exp>
-                            <!--
+
                             <app-modal-eliminar-exp
                                 *ngIf="this.logueado"
                                 [experiencia]="this.experiencia"
                             ></app-modal-eliminar-exp>
-                            -->
+
                         </div>
                     </div>
                     <p>{{experiencia.empresa}}</p>
@@ -89,25 +89,25 @@
             <ul>
                 <li *ngFor="let habilidad of listaHabilidades">
                     <div class="cvtitulo">
-                        <h5>{{habilidad.nombre}}</h5>
+                        <h5 class="hab">{{habilidad.nombre}}</h5>
                         <div class="edicion">
                             <app-modal-editar-hab
                                 *ngIf="this.logueado"
                                 [habilidad]="this.habilidad"
                             ></app-modal-editar-hab>
-                            <!--
+
                             <app-modal-eliminar-hab
                                 *ngIf="this.logueado"
                                 [habilidad]="this.habilidad"
                             ></app-modal-eliminar-hab>
-                            -->
+
                         </div>
                     </div>
-                    <div class="progress">
-                        <div class="progress">
-                            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-                        </div>
-                    </div>
+                    <mat-progress-bar 
+                        mode="determinate"
+                        color="cyan"
+                        [value]="habilidad.porcentaje"
+                    ></mat-progress-bar>
                 </li>
                 <li>
                     <div class="cvtitulo">
@@ -130,12 +130,12 @@
                                 *ngIf="this.logueado"
                                 [proyecto]="this.proyecto"
                             ></app-modal-editar-proy>
-                            <!--- 
+
                             <app-modal-eliminar-proy
                                 *ngIf="this.logueado"
                                 [proyecto]="this.proyecto"
                             ></app-modal-eliminar-proy>
-                            -->
+
                         </div>
                     </div>
                     <p>{{proyecto.descripcion}}</p>

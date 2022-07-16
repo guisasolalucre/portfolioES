@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-portafolio',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portafolio.component.css']
 })
 export class PortafolioComponent implements OnInit {
+
+  @Output() ventana: string = 'portafolio';
 
   constructor() { }
 

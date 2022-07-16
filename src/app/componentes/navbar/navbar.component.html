@@ -3,6 +3,8 @@
         <img src="./assets/argprogsf.png" alt="argentina programa">
     </a>
 
+    <ng-template [ngIf]="ventana === 'portafolio'">
+
         <div class="redessociales">
 
             <a class="btn btn-outline-light m-1" href="https://www.linkedin.com/in/{{persona.linkedin}}/"
@@ -27,6 +29,17 @@
             
         </div> 
         
-        <button id="logout" class="btn btn-outline-danger my-2 my-sm-0" type="button"
-        [routerLink]="['/login']">Logout</button>
+        <div *ngIf=" this.logueado; else loguear">
+            <button id="logout" class="btn btn-outline-danger my-2 my-sm-0" type="button"
+                    (click)="cerrarSesion()"
+            >Logout</button>
+            
+        </div>
+        <ng-template #loguear>
+            <button id="login" class="btn btn-outline-success my-2 my-sm-0" type="button"
+                    [routerLink]="['/login']"
+            >Login</button>
+        </ng-template>
+
+    </ng-template>
 </nav>
