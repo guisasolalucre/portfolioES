@@ -14,7 +14,7 @@ const httpOptions= {
 })
 export class PersonaService {
 
-  url: string = "http://localhost:8080/api";
+  url: string = "https://git.heroku.com/infinite-tundra-15546.git";
 
   constructor(private http: HttpClient) { }
 

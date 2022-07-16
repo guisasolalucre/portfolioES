@@ -14,7 +14,7 @@ const httpOptions= {
 })
 export class ProyectoService {
 
-  private url = "http://localhost:8080/api"
+  private url = "https://git.heroku.com/infinite-tundra-15546.git"
   
   constructor(
     private http: HttpClient
