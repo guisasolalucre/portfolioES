@@ -14,7 +14,7 @@ const httpOptions= {
 })
 export class HabilidadService {
 
-  private url = "https://git.heroku.com/infinite-tundra-15546.git"
+  private url = "https://infinite-tundra-15546.herokuapp.com"
   
   constructor(
     private http: HttpClient
