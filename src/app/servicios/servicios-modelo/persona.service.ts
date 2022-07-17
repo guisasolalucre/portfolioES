@@ -14,7 +14,7 @@ const httpOptions= {
 })
 export class PersonaService {
 
-  url: string = "https://infinite-tundra-15546.herokuapp.com";
+  url: string = "https://lucrecia-guisasola-portafolio.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 
