@@ -18,8 +18,8 @@ export class PersonaService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerDatos(): Observable<any> {
-    return this.http.get(this.url + "/datos");
+  obtenerDatos(): Observable<Persona> {
+    return this.http.get<Persona>(`${this.url}/datos`);
   }
 
   editarPersona(per:Persona): Observable<Persona>{
