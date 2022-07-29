@@ -19,9 +19,21 @@
   <div id="contenedor">
 
     <div class="datos">
-      <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
-      <p id="descripcion">{{persona.ocupacion}}</p>
-      <p id="ubicacion">{{persona.ubicacion}}</p>
+      <div *ngIf="(persona.nombre == null || persona.nombre == '');
+        then sindatos 
+        else condatos"
+        class="fotoperfil">
+      </div>
+      <ng-template #sindatos>
+        <h3 id="nombre">Nombre y apellido</h3>
+        <p id="descripcion">Ocupación</p>
+        <p id="ubicacion">Ubicación</p>
+      </ng-template>
+      <ng-template #condatos>
+        <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
+        <p id="descripcion">{{persona.ocupacion}}</p>
+        <p id="ubicacion">{{persona.ubicacion}}</p>
+      </ng-template>
     </div>
 
     <div id="editar-perfil">
