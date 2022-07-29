@@ -8,18 +8,18 @@ ul li{
     list-style-type: none;
 }
 
-.pestañas{
+.tabs{
     border-bottom: 1px solid #E0E0E0;
     background-color: #212121;
 }
 
-.pestañas ul{
+.tabs ul{
     padding: 10px;
     display: inline-block;
     margin: 0;
 }
 
-.pestañas ul li{
+.tabs ul li{
     display: inline-block;
     border-right: 2px solid #fff;
     color: white;
@@ -31,7 +31,7 @@ ul li{
     position: relative;
 }
 
-.pestañas ul li:last-child{
+.tabs ul li:last-child{
     border-right: none;
 }
 
