@@ -1,10 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { Educacion } from 'src/app/modelo/Educacion';
-import { EducacionService } from 'src/app/servicios/servicios-modelo/educacion.service';
 
 @Component({
   selector: 'app-modal-editar-edu',
@@ -14,7 +12,7 @@ import { EducacionService } from 'src/app/servicios/servicios-modelo/educacion.s
 export class ModalEditarEduComponent implements OnInit {
 
   @Input() educacion!: Educacion;
-  listaEducacion: Educacion[] = [];
+  @Output() onEditarEducacion: EventEmitter<Educacion> = new EventEmitter();
 
   carrera:string ="";
   institucion:string="";
@@ -25,8 +23,6 @@ export class ModalEditarEduComponent implements OnInit {
 
   constructor(
     public modal:NgbModal,
-    private educacionService: EducacionService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -39,11 +35,9 @@ export class ModalEditarEduComponent implements OnInit {
     const ubicacion = this.ubicacion;
     const inicio = this.inicio;
     const fin = this.fin;
-    const editado = { id, carrera, institucion, ubicacion, inicio, fin };
+    const editado : Educacion = { id, carrera, institucion, ubicacion, inicio, fin };
 
-    this.educacionService.editarEducacion(editado).subscribe((data)=>(
-      console.log(data)
-    ));
+    this.onEditarEducacion.emit(editado);
     
     formDetailUser.reset();
 

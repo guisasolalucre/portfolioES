@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { Habilidad } from 'src/app/modelo/Habilidad';
@@ -20,7 +19,6 @@ export class ModalAgregarHabComponent implements OnInit {
 
   constructor(
     public modal: NgbModal,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +26,7 @@ export class ModalAgregarHabComponent implements OnInit {
 
   onSubmit(formDetailUser: NgForm){
     const {nombre, porcentaje} = this
-    const nuevaHabilidad = {nombre, porcentaje}
+    const nuevaHabilidad : Habilidad = {nombre, porcentaje}
     this.onAgregarHabilidad.emit(nuevaHabilidad);
     formDetailUser.reset();
     window.location.reload();

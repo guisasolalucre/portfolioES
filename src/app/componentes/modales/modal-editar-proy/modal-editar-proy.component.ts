@@ -1,10 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { Proyecto } from 'src/app/modelo/Proyecto';
-import { ProyectoService } from 'src/app/servicios/servicios-modelo/proyecto.service';
 
 @Component({
   selector: 'app-modal-editar-proy',
@@ -14,7 +12,7 @@ import { ProyectoService } from 'src/app/servicios/servicios-modelo/proyecto.ser
 export class ModalEditarProyComponent implements OnInit {
 
   @Input() proyecto!: Proyecto;
-  listaProyectos: Proyecto[] = [];
+  @Output() onEditarProyecto: EventEmitter<Proyecto> = new EventEmitter();
 
   nombre:string ="";
   link:string="";
@@ -25,8 +23,6 @@ export class ModalEditarProyComponent implements OnInit {
 
   constructor(
     public modal:NgbModal,
-    private proyectoService: ProyectoService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -39,11 +35,9 @@ export class ModalEditarProyComponent implements OnInit {
     const descripcion = this.descripcion;
     const inicio = this.inicio;
     const fin = this.fin;
-    const editado = { id, nombre, link, descripcion, inicio, fin };
+    const editado : Proyecto = { id, nombre, link, descripcion, inicio, fin };
 
-    this.proyectoService.editarProyecto(editado).subscribe((data)=>(
-      console.log(data)
-    ));
+    this.onEditarProyecto.emit(editado);
     
     formDetailUser.reset();
 

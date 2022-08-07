@@ -1,10 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { Experiencia } from 'src/app/modelo/Experiencia';
-import { ExperienciaService } from 'src/app/servicios/servicios-modelo/experiencia.service';
 
 @Component({
   selector: 'app-modal-editar-exp',
@@ -14,7 +12,7 @@ import { ExperienciaService } from 'src/app/servicios/servicios-modelo/experienc
 export class ModalEditarExpComponent implements OnInit {
 
   @Input() experiencia!: Experiencia;
-  listaExperiencia: Experiencia[] = [];
+  @Output() onEditarExperiencia: EventEmitter<Experiencia> = new EventEmitter();
 
   puesto:string ="";
   empresa:string="";
@@ -26,8 +24,6 @@ export class ModalEditarExpComponent implements OnInit {
 
   constructor(
     public modal:NgbModal,
-    private experienciaService: ExperienciaService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -41,11 +37,9 @@ export class ModalEditarExpComponent implements OnInit {
     const inicio = this.inicio;
     const fin = this.fin;
     const descripcion = this.descripcion;
-    const editado = { id, puesto, empresa, ubicacion, inicio, fin, descripcion };
+    const editado : Experiencia = { id, puesto, empresa, ubicacion, inicio, fin, descripcion };
 
-    this.experienciaService.editarExperiencia(editado).subscribe((data)=>(
-      console.log(data)
-    ));
+    this.onEditarExperiencia.emit(editado);
     
     formDetailUser.reset();
 

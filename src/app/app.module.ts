@@ -1,7 +1,7 @@
 import { AppRoutingModule } from './app-routing.module.ts/app-routing.module.ts.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -13,8 +13,6 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
 import { SeccionesComponent } from './componentes/secciones/secciones.component';
-import { ConstruccionComponent } from './componentes/construccion/construccion.component';
-
 
 import { ModalAgregarEduComponent } from './componentes/modales/modal-agregar-edu/modal-agregar-edu.component';
 import { ModalAgregarExpComponent } from './componentes/modales/modal-agregar-exp/modal-agregar-exp.component';
@@ -32,7 +30,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PersonaService } from './servicios/servicios-modelo/persona.service';
 import { ModalEditarInfoComponent } from './componentes/modales/modal-editar-info/modal-editar-info.component';
-//import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +40,6 @@ import { ModalEditarInfoComponent } from './componentes/modales/modal-editar-inf
     LoginComponent,
     PortafolioComponent,
     SeccionesComponent,
-    ConstruccionComponent,
     ModalAgregarEduComponent,
     ModalAgregarExpComponent,
     ModalAgregarHabComponent,
@@ -69,8 +65,7 @@ import { ModalEditarInfoComponent } from './componentes/modales/modal-editar-inf
     NoopAnimationsModule,
   ],
   providers: [
-    PersonaService,
-    // {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+    PersonaService
   ],
   bootstrap: [AppComponent]
 })

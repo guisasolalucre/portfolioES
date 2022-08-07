@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Habilidad } from 'src/app/modelo/Habilidad';
-import { HabilidadService } from 'src/app/servicios/servicios-modelo/habilidad.service';
 
 @Component({
   selector: 'app-modal-eliminar-hab',
@@ -11,17 +10,15 @@ import { HabilidadService } from 'src/app/servicios/servicios-modelo/habilidad.s
 export class ModalEliminarHabComponent implements OnInit {
 
   @Input() habilidad!: Habilidad
+  @Output() onEliminarHabilidad: EventEmitter<Habilidad> = new EventEmitter();
 
-  constructor(public modal:NgbModal,
-              public habilidadService: HabilidadService) { }
+  constructor(public modal:NgbModal,) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    this.habilidadService.eliminarHabilidad(this.habilidad).subscribe((data)=>(
-      console.log("eliminado")
-    ));
+    this.onEliminarHabilidad.emit(this.habilidad);
 
     window.location.reload();
   }

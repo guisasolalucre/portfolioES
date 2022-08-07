@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { Persona } from 'src/app/modelo/Persona';
@@ -34,7 +33,6 @@ export class ModalEditarInfoComponent implements OnInit {
   constructor(
     public modal:NgbModal,
     private personaService: PersonaService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -56,7 +54,7 @@ export class ModalEditarInfoComponent implements OnInit {
     const usuario = this.persona.usuario;
     const password = this.persona.password;
 
-    const editado = { id, nombre, apellido, acercade, ocupacion, ubicacion, fotoPerfil,
+    const editado : Persona = { id, nombre, apellido, acercade, ocupacion, ubicacion, fotoPerfil,
                       fotoPortada, github, linkedin, whatsapp, email, usuario, password };
 
     this.personaService.editarPersona(editado).subscribe((data)=>(

@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Proyecto } from 'src/app/modelo/Proyecto';
-import { ProyectoService } from 'src/app/servicios/servicios-modelo/proyecto.service';
 
 @Component({
   selector: 'app-modal-eliminar-proy',
@@ -11,17 +10,15 @@ import { ProyectoService } from 'src/app/servicios/servicios-modelo/proyecto.ser
 export class ModalEliminarProyComponent implements OnInit {
 
   @Input() proyecto!: Proyecto
+  @Output() onEliminarProyecto: EventEmitter<Proyecto> = new EventEmitter();
 
-  constructor(public modal:NgbModal,
-              public proyectoService: ProyectoService) { }
+  constructor(public modal:NgbModal,) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    this.proyectoService.eliminarProyecto(this.proyecto).subscribe((data)=>(
-      console.log("eliminado")
-    ));
+    this.onEliminarProyecto.emit(this.proyecto);
 
     window.location.reload();
   }

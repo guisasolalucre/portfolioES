@@ -29,11 +29,13 @@
                             <app-modal-editar-edu
                                 *ngIf="this.logueado"
                                 [educacion]="this.educacion"
+                                (onEditarEducacion)="editarEducacion($event)"
                             ></app-modal-editar-edu>
                             
                             <app-modal-eliminar-edu
                                 *ngIf="this.logueado"
                                 [educacion]="this.educacion"
+                                (onEliminarEducacion)="eliminarEducacion($event)"
                             ></app-modal-eliminar-edu>
                         </div>
                     </div>
@@ -61,11 +63,13 @@
                             <app-modal-editar-exp
                                 *ngIf="this.logueado"
                                 [experiencia]="this.experiencia"
+                                (onEditarExperiencia)="editarExperiencia($event)"
                             ></app-modal-editar-exp>
 
                             <app-modal-eliminar-exp
                                 *ngIf="this.logueado"
                                 [experiencia]="this.experiencia"
+                                (onEliminarExperiencia)="eliminarExperiencia($event)"
                             ></app-modal-eliminar-exp>
 
                         </div>
@@ -94,11 +98,13 @@
                             <app-modal-editar-hab
                                 *ngIf="this.logueado"
                                 [habilidad]="this.habilidad"
+                                (onEditarHabilidad)="editarHabilidad($event)"
                             ></app-modal-editar-hab>
 
                             <app-modal-eliminar-hab
                                 *ngIf="this.logueado"
                                 [habilidad]="this.habilidad"
+                                (onEliminarHabilidad)="eliminarHabilidad($event)"
                             ></app-modal-eliminar-hab>
 
                         </div>
@@ -129,11 +135,13 @@
                             <app-modal-editar-proy
                                 *ngIf="this.logueado"
                                 [proyecto]="this.proyecto"
+                                (onEditarProyecto)="editarProyecto($event)"
                             ></app-modal-editar-proy>
 
                             <app-modal-eliminar-proy
                                 *ngIf="this.logueado"
                                 [proyecto]="this.proyecto"
+                                (onEliminarProyecto)="eliminarProyecto($event)"
                             ></app-modal-eliminar-proy>
 
                         </div>
